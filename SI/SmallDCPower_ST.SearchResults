@@ -1,0 +1,3 @@
+---- eChgStop_PillarReady_BatVoltMismatchBcpVolt Matches (2 in 2 files) ----
+ChgPro_WaitPillarReady.c (e:\tiamo\未来小功率直流充电桩\st\smalldcpowerpile\core\thread\thd_charge):          ChargeStopType = eChgStop_PillarReady_BatVoltMismatchBcpVolt;
+Global.h (e:\tiamo\未来小功率直流充电桩\st\smalldcpowerpile\core\inc):  eChgStop_PillarReady_BatVoltMismatchBcpVolt = 49,
