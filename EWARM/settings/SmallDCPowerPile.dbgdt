@@ -44,7 +44,7 @@
         <expressions>
           
           
-        <item>xTickCount</item><item>ChargeTimeCount</item><item>ChargeCtrl.CurProcess</item><item>AdcBuffer</item><item>AdcVoltBuf</item><item>hcan2</item><item>KeyPressCfg</item><item>ChargeEnable</item><item>DisChargeEnable</item><item>ChargeStopType</item><item>DisChargeStopType</item><item>ImdVxVolt</item><item>ImdValue</item><item>DcModuleManage</item><item>DcModuleCtrl</item><item>ChargeError</item><item>BclMsg</item><item>BhmMsg</item><item>StopBtnPressCfg</item><item>ResMsg</item><item>BstMsg</item><item>CarTypeVar</item><item>PillarError</item><item></item></expressions>
+        <item>xTickCount</item><item>ChargeTimeCount</item><item>ChargeCtrl.CurProcess</item><item>AdcBuffer</item><item>AdcVoltBuf</item><item>hcan2</item><item>KeyPressCfg</item><item>ChargeEnable</item><item>DisChargeEnable</item><item>ChargeStopType</item><item>DisChargeStopType</item><item>ImdVxVolt</item><item>ImdValue</item><item>DcModuleManage</item><item>DcModuleCtrl</item><item>ChargeError</item><item>BclMsg</item><item>BhmMsg</item><item>StopBtnPressCfg</item><item>ResMsg</item><item>BstMsg</item><item>CarTypeVar</item><item>PillarError</item><item/></expressions>
         <col-names>
           
           
