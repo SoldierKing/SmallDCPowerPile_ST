@@ -480,7 +480,7 @@ extern u8 HexToBcd(u8 Hex);
 extern int CopyCode(u32 Des, u32 Scr, u32 Len);
 extern int UpdateFlagSet(u32 Status);
 
-#define __SoftVer__ (0x0375)  //BCDÂë Èç:V1.02   SoftVer = 0x0102
+#define __SoftVer__ (0x0101)  //BCDÂë Èç:V1.02   SoftVer = 0x0102
 
 #endif
 
