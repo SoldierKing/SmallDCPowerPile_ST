@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-1746316961
+Checksum=375316461
 [CodeCoverage]
 Enabled=_ 0
 [Exceptions]
@@ -54,6 +54,12 @@ ITMportsLogFile=0
 ITMlogFile=$PROJ_DIR$\ITM.log
 [struct_types]
 Fmt0=UnionChgError-Mult	3	0
+[Trace1]
+Enabled=0
+ShowSource=1
+[Trace2]
+Enabled=0
+ShowSource=0
 [SWOTraceWindow]
 PcSampling=0
 InterruptLogs=0
@@ -92,6 +98,10 @@ GraphEnabled=0
 ShowTimeLog=1
 ShowTimeSum=1
 SumSortOrder=0
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -99,6 +109,13 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
+[Aliases]
+A0=_ "E:\Tiamo\未来小功率直流充电桩\SmallDCPowerPile\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc.c" ""
+A1=_ "E:\Tiamo\未来小功率直流充电桩\SmallDCPowerPile\EWARM\startup_stm32f105xc.s" ""
+A2=_ "E:\Tiamo\未来小功率直流充电桩\SmallDCPowerPile\Middlewares\Third_Party\FreeRTOS\Source\queue.c" ""
+A3=_ "E:\Tiamo\未来小功率直流充电桩\SmallDCPowerPile\Middlewares\Third_Party\FreeRTOS\Source\tasks.c" ""
+Count=4
+SuppressDialog=1
 [CallStackLog]
 Enabled=0
 [PowerProbe]
@@ -111,14 +128,3 @@ Mode=3
 Graph=0
 Symbiont=0
 Exclusions=
-[Disassemble mode]
-mode=0
-[Breakpoints2]
-Count=0
-[Aliases]
-A0=_ "E:\Tiamo\未来小功率直流充电桩\SmallDCPowerPile\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc.c" ""
-A1=_ "E:\Tiamo\未来小功率直流充电桩\SmallDCPowerPile\EWARM\startup_stm32f105xc.s" ""
-A2=_ "E:\Tiamo\未来小功率直流充电桩\SmallDCPowerPile\Middlewares\Third_Party\FreeRTOS\Source\queue.c" ""
-A3=_ "E:\Tiamo\未来小功率直流充电桩\SmallDCPowerPile\Middlewares\Third_Party\FreeRTOS\Source\tasks.c" ""
-Count=4
-SuppressDialog=1

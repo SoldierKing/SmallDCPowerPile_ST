@@ -185,9 +185,20 @@ void ChgProChgConfigure(StructChargeCtrl *pChargeCtrl)
       pChargeCtrl->CurProcess = eChgPro_ChgBreak;
       pChargeCtrl->Param = 0;
     }
+    
     if(0 != PillarError.Value.Meter)
     {
       ChargeStopType = eChgStop_Conf_Meter;
+      pChargeCtrl->CurProcess = eChgPro_ChgBreak;
+      pChargeCtrl->Param = 0;
+    }
+    
+    if(0 != PillarError.Value.ACInputOut)
+    {
+      CstMsg.StopReason.Value.Truble = 1;
+      CstMsg.StopTruble.Value.Other = 1;
+      CstMsg.StopFault.Value.Volt = 1;
+      ChargeStopType = eChgStop_Fault_ACInputOut;
       pChargeCtrl->CurProcess = eChgPro_ChgBreak;
       pChargeCtrl->Param = 0;
     }

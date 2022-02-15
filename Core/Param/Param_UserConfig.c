@@ -89,6 +89,35 @@ StructWorkModeCfg  WorkModeCfg =
   
 };
 
+
+//充电过程中掉电故障配置
+StructFaultDetCfg FltACVoltDownErro =
+{
+  .FaultEn = Enable,
+  .FaultRecEn = Enable,
+  .RecLock = UnLock,
+  .DetType = DetByAdcValue,
+  .DetBasisType = ByTimer,
+  .Timer.FaultContinueTime = 1500,
+  .Timer.FaultRecTime = 1500,
+  .Timer.Tick = 0,
+  .Timer.RecTick = 0,
+  .Count.FaultCounts = 10,
+  .Count.FaultRecCount = 0,
+  .Count.Count = 0,
+  .Bit.TiggerBit = Bit_SET,
+  .Bit.RecBit = Bit_RESET,
+  .AdcValue.UpLimitValue = 0,
+  .AdcValue.LowLimitValue = 1700,
+  .AdcValue.UpLimitRecValue = 0,
+  .AdcValue.LowLimitRecValue = 2000,
+  .AdcValue.DetType = LowLimit,
+  .Erro = 0,
+  .ErrCount = 0,
+};
+
+
+
 //电子锁故障配置数据结构
 StructFaultDetCfg FltEleLockErro =
 {

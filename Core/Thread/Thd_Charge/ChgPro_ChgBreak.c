@@ -190,7 +190,9 @@ void ChgProChgBreak(StructChargeCtrl *pChargeCtrl)
     {//外部控制结束充电
       LockSet(eSwSta_Off);
 
-      if (GunOutFlag)
+      if (GunOutFlag
+          || (ChargeStopType == eChgStop_Fault_ACInputOut && 0 == PillarError.Value.ACInputOut)
+          )
       {
         
         pChargeCtrl->CurProcess = eChgPro_ChgIdle;

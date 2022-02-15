@@ -7,13 +7,13 @@
 #include "ADrv_DcModel.h"
 #include "Drv_CAN.h"
 #include "ADrv_AdcVolt.h"
-#include "ADrv_SpiFlash.h"
 #include "Thd_Charge.h"
 
 
 typedef BitAction  (*pGetFaultByBit)(void);
 typedef u32        (*pGetFaultByValue)(void);
 
+/*
 /// <summary>
 ///  ªÒ»°µÁ◊”À¯ «∑Ò“Ï≥£
 /// </summary>
@@ -160,7 +160,7 @@ BitAction  GetCan2Fault(void)
   return (0 != HcanDrv.Can2ErrCount ? Bit_SET:Bit_RESET);
 }
 
-
+*/
 /// <summary>
 ///  π ’œºÏ≤‚∫Ø ˝
 /// </summary>
@@ -185,6 +185,7 @@ int FDC(StructFaultDetCfg* TempComDetCfg,
   return TempComDetCfg->Erro;
 }
 
+/*
 /// <summary>
 ///  ºÏ≤‚SPIFLASH «∑Ò”–π ’œ
 /// </summary>
@@ -195,7 +196,12 @@ BitAction  GetSpiFlashFault(void)
   return (0 != SpiFlashError ? Bit_SET:Bit_RESET);
 }
 
+*/
 
+u32 GetACInputVolt(void)
+{
+  return (u32)GetDcModuleVoltA();
+}
 
 void Thd_FDCMonitor(void const *argument)
 {
@@ -203,8 +209,18 @@ void Thd_FDCMonitor(void const *argument)
   while (TRUE)
   {
    
-    int Ret = -1;
-  
+    int Ret = -1; 
+    
+    //≥‰µÁ÷–AC≤‡ ‰»ÎµÁ—πµÙµÁπ ’œºÏ≤‚
+    Ret = FDC(&FltACVoltDownErro,NULL,GetACInputVolt);
+    if (Ret == 1 && FltACVoltDownErro.ErrCount >= 1)
+      PillarError.Value.ACInputOut = 1;
+    else if (Ret == 0)
+    {
+      FltACVoltDownErro.ErrCount = 0;
+      PillarError.Value.ACInputOut = 0;
+    }
+    /*
     //µÁ◊”À¯π ’œºÏ≤‚
     Ret = FDC(&FltEleLockErro,GetEleLockFault,NULL);
     if (Ret == 1 && FltEleLockErro.ErrCount >= 1)
@@ -214,8 +230,9 @@ void Thd_FDCMonitor(void const *argument)
       FltEleLockErro.ErrCount = 0;
       PillarError.Value.EleLock = 0;
     }
+    */
     
-    
+    /*
     //∏ﬂ—πºÃµÁ∆˜’≥¡¨π ’œºÏ≤‚
     Ret = FDC(&FltRlyAdhesionErro,GetHRlyFault,NULL);
     if (Ret == 1 && FltRlyAdhesionErro.ErrCount >= 1)
@@ -225,7 +242,7 @@ void Thd_FDCMonitor(void const *argument)
       FltRlyAdhesionErro.ErrCount = 0;
       PillarError.Value.RlyAdhesion = 0;
     }
-    
+    */
     
     /*
     //≥µ∂ÀµÁ≥ÿ∑¥Ω”π ’œºÏ≤‚
@@ -239,6 +256,7 @@ void Thd_FDCMonitor(void const *argument)
     }
     */
     
+    /*
     //¬©µÁ¡˜π ’œºÏ≤‚
     Ret = FDC(&FltLeakErro,GetLeakFault,NULL);
     if (Ret == 1 && FltLeakErro.ErrCount >= 1)
@@ -282,7 +300,7 @@ void Thd_FDCMonitor(void const *argument)
         PillarError.Value.NoDcmod = 0;
       }
     }
-
+    */
     
     /*
     //Can1π ’œºÏ≤‚
@@ -306,6 +324,7 @@ void Thd_FDCMonitor(void const *argument)
     }
     */
     
+    /*
     //SPIFlashπ ’œºÏ≤‚
     Ret = FDC(&FltSpiFlashErro,GetSpiFlashFault,NULL);
     if (Ret == 1 && FltSpiFlashErro.ErrCount >= 1)
@@ -315,7 +334,7 @@ void Thd_FDCMonitor(void const *argument)
       FltSpiFlashErro.ErrCount = 0;
       PillarError.Value.SpiFlash = 0;
     }
-           
+    */     
     osDelay(5);
   }
   

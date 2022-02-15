@@ -75,6 +75,7 @@ void ChgProChgIdle(StructChargeCtrl *pChargeCtrl)
         || (0 != PillarError.Value.Contactor)
         || (0 != PillarError.Value.UniContactor)
         || (0 != PillarError.Value.InVolt)
+        || (0 != PillarError.Value.ACInputOut)
         || (ResMsg.Valid != 0 && ResMsg.V2LDischargeReq.Value.V2lDisChargeSta != 4)
       )
     {

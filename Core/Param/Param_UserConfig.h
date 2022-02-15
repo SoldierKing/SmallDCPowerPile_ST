@@ -112,6 +112,8 @@ extern StructFaultDetCfg FltDcModuleErro;
 extern StructFaultDetCfg FltCan1Erro;
 extern StructFaultDetCfg FltCan2Erro;
 extern StructFaultDetCfg FltSpiFlashErro;
+extern StructFaultDetCfg FltACVoltDownErro;
+
 extern StructFLECfg TwinkQuickBatLighting;
 extern WS2812BCfgStruct BreatheBlueCfg;
 extern WS2812BCfgStruct BreatheWhiteCfg;

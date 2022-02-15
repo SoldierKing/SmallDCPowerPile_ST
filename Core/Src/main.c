@@ -22,6 +22,7 @@
 #include "cmsis_os.h"
 #include "Thd_Monitor.h"
 #include "Drv_IWDG.h"
+#include "Thd_Mult.h"
     
 
 /* Private includes ----------------------------------------------------------*/
@@ -125,6 +126,10 @@ int main(void)
   
   osThreadDef(ThdCharge, Thd_Charge, osPriorityNormal, 0, configMINIMAL_STACK_SIZE);
   osThreadCreate(osThread(ThdCharge), NULL);
+  
+  osThreadDef(ThdFDCMonitor, Thd_FDCMonitor, osPriorityNormal, 0, configMINIMAL_STACK_SIZE);
+  osThreadCreate(osThread(ThdFDCMonitor), NULL);
+    
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

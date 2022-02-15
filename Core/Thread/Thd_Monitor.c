@@ -66,7 +66,7 @@ void Thd_Monitor(void const *parameter)
     Thd_LampSignals();
     
     //电源掉电电子锁解锁
-    PowerFailureCheck();
+    //PowerFailureCheck();
     
     //ADC值更新
     GetAdcBuffValue(AdcBuffer);

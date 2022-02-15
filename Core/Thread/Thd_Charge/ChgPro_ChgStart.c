@@ -243,6 +243,16 @@ void ChgProChgStart(StructChargeCtrl *pChargeCtrl)
       pChargeCtrl->Param = 0;
     }
     
+    if(0 != PillarError.Value.ACInputOut)
+    {
+      CstMsg.StopReason.Value.Truble = 1;
+      CstMsg.StopTruble.Value.Other = 1;
+      CstMsg.StopFault.Value.Volt = 1;
+      ChargeStopType = eChgStop_Fault_ACInputOut;
+      pChargeCtrl->CurProcess = eChgPro_ChgBreak;
+      pChargeCtrl->Param = 0;
+    }
+    
     if (ResMsg.Valid != 0 && ResMsg.V2LDischargeReq.Value.V2lDisChargeSta != 4)
     {
       CstMsg.StopTruble.Value.Other = 1;

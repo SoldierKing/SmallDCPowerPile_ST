@@ -1105,6 +1105,9 @@
         <file>
           <name>$PROJ_DIR$\..\Core\Thread\Thd_Monitor.c</name>
         </file>
+        <file>
+          <name>$PROJ_DIR$\..\Core\Thread\Thd_Mult.c</name>
+        </file>
       </group>
       <file>
         <name>$PROJ_DIR$\..\Core\Src\Global.c</name>

@@ -350,7 +350,7 @@ typedef enum
   eChgStop_BRM_DisCarTypeErr = 110,
   eChgStop_V2L_DisPileModeErr = 111,
   eChgStop_VEH_RES_WorkModleErr = 112,
-
+  eChgStop_Fault_ACInputOut = 113,
 
 }EnumChgStopType;
 
@@ -424,8 +424,10 @@ typedef union
     u32 InterTempOver:1;
     u32 PosGunTempOver:1;
     u32 NeGunTempOver:1;
+    
     u32 ACCContactor :1;
     u32 ACBreaker    :1;
+    u32 ACInputOut   :1;
   }Value;
 }UnionPillarError;
 
